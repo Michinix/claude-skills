@@ -4,7 +4,7 @@
 
 Skill Claude Code qui automatise le flow de dev Plane + GitLab : de l'issue Plane jusqu'à la MR GitLab.
 
-**Pourquoi ce skill.** Chaque tâche demandait la même série de gestes manuels dans deux outils : renseigner l'issue Plane (assignation, dates, estimation, labels), créer la branche GitLab, commiter, pousser, rédiger la MR (description, labels, assignee, relecteur), puis revenir dans Plane. Ces allers-retours n'apportent aucune valeur au code et se répètent à chaque tâche : le skill les prend en charge, et le temps gagné sert à développer et à se concentrer sur des tâches réellement utiles, comme la relation client.
+**Pourquoi ce skill.** Chaque tâche demandait la même série de gestes manuels dans deux outils : renseigner l'issue Plane (assignation, dates, estimation, labels), créer la branche GitLab, commiter, pousser, rédiger la MR (description, labels, assignee, relecteur), puis revenir dans Plane. Ces allers-retours n'apportent aucune valeur au code et se répètent à chaque tâche : le skill les prend en charge, et le temps gagné sert à développer et à se concentrer sur des tâches réellement utiles.
 
 ## Flow : 2 phases
 

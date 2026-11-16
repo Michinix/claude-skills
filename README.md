@@ -6,7 +6,7 @@ Collection de skills [Claude Code](https://claude.com/claude-code). Un dossier p
 
 | Skill | Rôle |
 |---|---|
-| [`plane-gitlab-flow`](plane-gitlab-flow/) | Flow Plane + GitLab après le dev : issue, branche, MR, passage en Test |
+| [`plane-gitlab-flow`](plane-gitlab-flow/) | Flow Plane + GitLab autour du dev. `start` : issue Plane (création, assignation, dates, estimation, labels), sync GitLab, branche. `mr` : commit validé, push, MR, issue en « Test » |
 
 ## Installation
 
@@ -24,9 +24,3 @@ cp -r <skill> ~/.claude/skills/
 ```
 
 Seuls les fichiers du dossier du skill comptent (`SKILL.md` et ses fichiers annexes). Le `README.md` racine, `.git` et `.gitignore` sont inutiles côté projet.
-
-## Ajouter un skill
-
-1. Créer `<nom-du-skill>/SKILL.md` avec le frontmatter `name` et `description`.
-2. Ajouter un `README.md` dans le dossier du skill (usage, prérequis, config).
-3. Lister le skill dans le tableau ci-dessus.

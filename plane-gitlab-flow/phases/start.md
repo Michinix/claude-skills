@@ -6,7 +6,7 @@ Argument : issue Plane (URL, `PROJ-45`, ou titre). Absent → demander.
 
 Tâche décrite sans issue existante, ou création demandée : la créer d'abord. Demande de création seule → s'arrêter après la création ; « crée et prends-la » → continuer en §1.
 
-- **Titre** court, avec les mots de l'utilisateur, sans numéro. **Description** : texte de l'utilisateur gardé tel quel, y compris ses lignes `REF <n>` / `v<x.y.z>` (jamais inventées) ; sinon 2-6 lignes (contexte, attendu, étapes pour un bug).
+- **Titre** : user story de 20 mots max (15-20 visés) décrivant ce qu'on veut faire, forme « En tant que <rôle>, je veux <action> » (+ « afin de <but> » si ça tient), avec les mots de l'utilisateur, sans numéro. **Description** : texte de l'utilisateur gardé tel quel, y compris ses lignes `REF <n>` / `v<x.y.z>` (jamais inventées) ; sinon 2-6 lignes (contexte, attendu, étapes pour un bug).
 - **Type** toujours `Issue` (`list_work_item_types`) ; bug, feature, etc. = labels. **Priorité** en minuscules (`urgent`, `high`, `medium`, `low`, `none`) : celle dite, sinon `medium`, `urgent` seulement si dit. **État** « Backlog » (ou « Sprint Backlog » si « dans le sprint »), résolu comme dans *États Plane* (`SKILL.md`). Labels et estimation : comme en §1.
 - Doublons : `search_work_items`, résultats du même projet (préfixe `PROJ-`) ; titre quasi identique → la montrer et demander.
 - `create_work_item` en une fois (`name`, `description_html`, `type_id`, `priority`, `state`, `labels`, `estimate_point`). Plusieurs issues demandées → toutes, récap en liste. Afficher identifiant et lien.

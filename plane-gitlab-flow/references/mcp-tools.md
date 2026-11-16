@@ -42,7 +42,7 @@ Préfixes par défaut : `mcp__claude_ai_Plane__` et `mcp__claude_ai_Gitlab__` (c
 | Moi | `get_user` (`me: true`) | `username` pour assignee |
 | Projet | `get_project` (`project_id` = chemin) | `default_branch`, `id` numérique |
 | Issue | `get_work_item` (`work_item_iid`, `include: ["notes"]`) | labels dans le widget `LABELS` |
-| Branche | `add_branch` (`branch`, `ref`) | crée côté GitLab ; ensuite `git fetch` + `git switch` |
+| Branche | `add_branch` (`branch`, `ref`) | crée côté GitLab ; ensuite `git fetch origin` puis `git switch` (appels séparés) |
 | Mes MR | `list_merge_requests` (`scope: created_by_me`, `state: opened`) | |
 | MR d'une branche | `list_merge_requests` + filtre sur `sourceBranch` | |
 | Commits d'une MR | `get_merge_request` (`include: ["commits"]`) | ne renvoie pas les relecteurs |

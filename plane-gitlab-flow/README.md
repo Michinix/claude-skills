@@ -10,7 +10,7 @@ Skill Claude Code qui automatise le flow de dev Plane + GitLab : de l'issue Plan
 
 | Phase | Action |
 |---|---|
-| `start` | Crée l'issue Plane si elle n'existe pas (titre = user story de 15-20 mots, description, priorité, labels, estimation). Assigne l'issue à toi (demande avant d'écraser quelqu'un d'autre), dates début/fin = aujourd'hui, estimation Fibonacci auto, labels (+ `gitlab` en dernier). Attend la sync GitLab (2 min max), pose l'état "En cours" (la sync le remet en "Sprint Backlog"), crée la branche `<iid>-<titre>` |
+| `start` | Crée l'issue Plane si elle n'existe pas (titre = user story de 15-20 mots, description, priorité, labels, estimation). Assigne l'issue à toi (demande avant d'écraser quelqu'un d'autre), dates début/fin = aujourd'hui, estimation Fibonacci auto, labels (+ `gitlab` en dernier). Attend la sync GitLab (2 min max), pose l'état "En cours" (la sync le remet en "Sprint Backlog"), crée la branche `<iid>-<titre>`, fait `git fetch` et bascule dessus |
 | (dev) | Tu codes |
 | `mr` | **Propose un message de commit et attend ta validation**, commite, pousse, puis crée la MR (ou la met à jour si elle existe) : titre = titre du commit, description en français + `Closes #<iid>` en dernière ligne, assignee, reviewers, labels de l'issue + `plane`. Passe l'issue Plane en "Test" (puis vérifie que la sync GitLab ne l'a pas changé). Prépare les captures dans `claude-screens/` |
 

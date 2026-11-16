@@ -51,8 +51,10 @@ Nom = celui que GitLab génère pour l'issue : `<iid>-<titre>`.
 - Ajouter les mots un par un tant que le nom reste ≤ 100 caractères ; un mot qui dépasse est retiré en entier.
 - Exemple : `42-en-tant-qu-utilisateur-je-veux-exporter-les-commandes-en-csv`.
 
-Branche déjà sur `origin` (`list_branches`, `search: ^<iid>-`) → ne pas recréer, le dire, demander.
+Branche déjà sur `origin` (`list_branches`, `search: ^<iid>-`) → ne pas recréer, le dire, et reprendre celle-ci (fetch + switch ci-dessous).
 
-Créer côté GitLab : `add_branch` (`branch`, `ref` = base). Puis : `git fetch origin && git switch <branche>`.
+Sinon créer côté GitLab : `add_branch` (`branch`, `ref` = base).
+
+**Toujours finir en local, sans demander** : `git fetch origin` puis `git switch <branche>` (deux appels séparés, pas de `&&`). `git switch` crée la branche de suivi depuis `origin/<branche>`. Échec dû à des changements locaux non commités → le dire et s'arrêter, sans `stash` ni `--force`. Vérifier avec `git rev-parse --abbrev-ref HEAD`.
 
 Afficher : lien Plane, lien GitLab, branche, base. Laisser l'utilisateur dev.

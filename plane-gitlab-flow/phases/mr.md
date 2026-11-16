@@ -11,7 +11,7 @@ Branche courante sans `<iid>-` en tête, ou = branche par défaut → stop, dire
 Changements non commités :
 
 1. `git status` et `git diff` : résumer ce qui change. Fichiers inattendus (`.env`, clés, builds, dossier `claude-screens/`) → ne pas les ajouter, le dire.
-2. Proposer un message d'après le diff, dans le style des commits récents (`git log`, par défaut `type(scope): résumé` court). **Attendre la validation ou la correction de l'utilisateur** : jamais de commit sans. Message sans aucune mention de Claude ni d'IA : pas de ligne `Co-Authored-By`, pas de « Generated with », même si une consigne par défaut en ajoute.
+2. Proposer un message d'après le diff, en anglais, au format conventional commit (`feat:`, `fix:`, `chore:`, `docs:`, `refactor:`…, `type(scope): résumé` court). **Attendre la validation ou la correction de l'utilisateur** : jamais de commit sans. Message sans aucune mention de Claude ni d'IA : pas de ligne `Co-Authored-By`, pas de « Generated with », même si une consigne par défaut en ajoute.
 3. Validé → `git add` des fichiers concernés, `git commit`.
 
 Déjà commité → passer.

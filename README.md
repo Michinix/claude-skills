@@ -1,6 +1,6 @@
 # claude-skills
 
-Collection de skills Code. Un dossier par skill, chacun avec un `SKILL.md`.
+Collection de skills Claude. Un dossier par skill, chacun avec un `SKILL.md`.
 
 ## Skills
 

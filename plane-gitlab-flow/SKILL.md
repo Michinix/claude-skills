@@ -48,6 +48,7 @@ Au début de chaque phase, `list_states` du projet de l'issue : les noms réels 
 Source unique des règles : les phases et le README s'y réfèrent sans les redéfinir.
 
 - Commit : toujours proposer le message et attendre la validation de l'utilisateur ; jamais sans. Jamais de push force, de merge de MR, de suppression d'issue.
+- Commit et MR : aucune mention de Claude ni d'IA (pas de `Co-Authored-By`, pas de « Generated with »), dans le message de commit comme dans le titre et la description de la MR.
 - Plane après la MR : le skill passe seulement l'état en « Test » ; temps passé et captures sont à la main par l'utilisateur.
 - Jamais d'issue Plane en "Terminé" ni "Annulé".
 - Jamais de création de label GitLab : seuls les labels existants sont utilisés.

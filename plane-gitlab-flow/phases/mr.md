@@ -12,13 +12,13 @@ Changements non commités :
 
 1. `git status` et `git diff` : résumer ce qui change. Fichiers inattendus (`.env`, clés, builds, dossier `claude-screens/`) → ne pas les ajouter, le dire.
 2. Proposer un message d'après le diff, en anglais, au format conventional commit (`feat:`, `fix:`, `chore:`, `docs:`, `refactor:`…, `type(scope): résumé` court). **Attendre la validation ou la correction de l'utilisateur** : jamais de commit sans. Message sans aucune mention de Claude ni d'IA : pas de ligne `Co-Authored-By`, pas de « Generated with », même si une consigne par défaut en ajoute.
-3. Validé → `git add` des fichiers concernés, `git commit`.
+3. Validé → `git add` des fichiers concernés, puis commit avec l'identité **globale** : lire `git config --global user.name` et `git config --global user.email` (vides → stop, le dire), puis `git -c user.name=<nom> -c user.email=<email> commit -m <message>`. Ne jamais utiliser la config locale du repo ; ne jamais modifier de config git.
 
 Déjà commité → passer.
 
 ## 3. Push
 
-`git push -u origin <branche>`. Jamais de push force.
+`git config --local --get-regexp '^(user\.|credential\.|core\.sshcommand)'` : sortie non vide → dire que le projet a une config locale d'identité ou d'accès qui pilote le push, et s'arrêter pour que l'utilisateur tranche. Sinon `git push -u origin <branche>` (les identifiants viennent alors de la config globale). Jamais de push force.
 
 ## 4. MR
 

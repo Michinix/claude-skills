@@ -1,7 +1,7 @@
 ---
 name: plane-gitlab-flow
 description: Flow de dev Plane + GitLab, pour un projet relié à Plane et GitLab (config.yml présent, branche `123-…`, ou issue Plane citée). start = crée l'issue Plane si besoin, assignation, état "En cours", dates, estimation, labels, branche. mr = commit proposé et validé, push, MR GitLab complète, issue Plane en "Test". Utiliser pour "crée l'issue", "je prends la tâche", "start", "j'ai fini", "fais la MR", "mr", ou /plane-gitlab-flow. Ne pas utiliser pour un simple commit ou push hors de ce flow.
-allowed-tools: mcp__claude_ai_Plane__get_me mcp__claude_ai_Plane__list_projects mcp__claude_ai_Plane__search_work_items mcp__claude_ai_Plane__retrieve_work_item_by_identifier mcp__claude_ai_Plane__create_work_item mcp__claude_ai_Plane__update_work_item mcp__claude_ai_Plane__manage_work_item_assignee mcp__claude_ai_Plane__manage_work_item_label mcp__claude_ai_Plane__list_states mcp__claude_ai_Plane__list_labels mcp__claude_ai_Plane__list_work_item_types mcp__claude_ai_Plane__get_project_estimate mcp__claude_ai_Plane__list_project_estimate_points mcp__claude_ai_Gitlab__get_work_item mcp__claude_ai_Gitlab__list_merge_requests mcp__claude_ai_Gitlab__get_merge_request mcp__claude_ai_Gitlab__save_merge_request mcp__claude_ai_Gitlab__list_branches mcp__claude_ai_Gitlab__add_branch mcp__claude_ai_Gitlab__get_project mcp__claude_ai_Gitlab__get_user mcp__claude_ai_Gitlab__list_project_members mcp__claude_ai_Gitlab__search_labels Bash(git status:*) Bash(git diff:*) Bash(git log:*) Bash(git fetch:*) Bash(git switch:*) Bash(git add:*) Bash(git push -u origin:*) Bash(git remote get-url:*) Bash(git rev-parse:*) Bash(date:*)
+model: sonnet
 ---
 
 # Plane + GitLab flow
@@ -49,6 +49,8 @@ Source unique des règles : les phases et le README s'y réfèrent sans les red�
 
 - Commit : toujours proposer le message et attendre la validation de l'utilisateur ; jamais sans. Jamais de push force, de merge de MR, de suppression d'issue.
 - Commit : message en anglais, format conventional commit (`feat:`, `fix:`, `chore:`…).
+- Identité git : toujours le compte **global** (`git config --global user.name` / `user.email`), jamais celui du projet (config locale du repo, includeIf). Voir `phases/mr.md`.
+- Modèle : `model: sonnet` (frontmatter) : le plus petit qui rédige proprement message de commit et description de MR. Haiku trop juste pour synthétiser un diff.
 - Commit et MR : aucune mention de Claude ni d'IA (pas de `Co-Authored-By`, pas de « Generated with »), dans le message de commit comme dans le titre et la description de la MR.
 - Plane après la MR : le skill passe seulement l'état en « Test » ; temps passé et captures sont à la main par l'utilisateur.
 - Jamais d'issue Plane en "Terminé" ni "Annulé".
